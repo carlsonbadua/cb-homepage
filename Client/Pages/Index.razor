@@ -11,40 +11,40 @@ Welcome to your new app. This is a renewal of the knowledgebase we've known befo
 
 <p>Rendering of command starts</p>
 
-<p role="status">Current count: @currentCount</p>
-<p role="status">Current count: @(currentCount)</p>
+@* <p role="status">Current count: @currentCount</p> *@
+@* <p role="status">Current count: @(currentCount)</p> *@
 
-@if (IncrementCount > 3)
-{
-    <p>You win!</p>
-}
+@* @if (IncrementCount > 3) *@
+@* { *@
+@*     <p>You win!</p> *@
+@* } *@
 
-<button class="btn btn-primary" @onclick="IncrementCount">Click me</button>
-<button class="btn btn-primary" @onclick="() => currentCount++">Click me</button>
+@* <button class="btn btn-primary" @onclick="IncrementCount">Click me</button> *@
+@* <button class="btn btn-primary" @onclick="() => currentCount++">Click me</button> *@
 
-<input @onchange="InputChanged" />
-<p>@message</p>
+@* <input @onchange="InputChanged" /> *@
+@* <p>@message</p> *@
 
-@code {
-    string message = "";
+@* @code { *@
+@*     string message = ""; *@
 
-    void InputChanged(ChangeEventArgs e)
-    {
-        message = (string)e.Value;
-    }
-}
+@*     void InputChanged(ChangeEventArgs e) *@
+@*     { *@
+@*         message = (string)e.Value; *@
+@*     } *@
+@* } *@
 
-<ul>
-    @foreach (var item in items)
-    {
-        <li>@item.Name</li>
-    }
-</ul>
+@* <ul> *@
+@*     @foreach (var item in items) *@
+@*     { *@
+@*         <li>@item.Name</li> *@
+@*     } *@
+@* </ul> *@
 
-<input @bind="text" />
-<button @onclick="() => text = string.Empty">Clear</button>
-<p>@text</p>
+@* <input @bind="text" /> *@
+@* <button @onclick="() => text = string.Empty">Clear</button> *@
+@* <p>@text</p> *@
 
-@code {
-    string text = "";
-}
+@* @code { *@
+@*     string text = ""; *@
+@* } *@
