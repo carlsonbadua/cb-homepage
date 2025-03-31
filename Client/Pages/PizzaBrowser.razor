@@ -5,4 +5,13 @@
 
 @code {
     private string PizzaGreeting = "Hello, this is the pizza corner for Carlson";
+
+    List<PizzaSpecials> specials = new();
+
+    protected override void OnInitialized()
+    {
+        specials.AddRange(new List<PizzaSpecials>){
+            new PizzaSpecials {PizzaName ="", PizzaBasePrice =, PizzaDescription = "", PizzaImageUrl = ""}
+        }
+    }
 }
