@@ -1,17 +1,41 @@
 ﻿@page "/pizza"
 
-<h3>PizzaBrowser</h3>
-<p>@PizzaGreeting</p>
+<div>
+    <h3>Pizza Browser</h3>
+    <p>@PizzaGreeting</p>
+
+    <ul class="pizza-cards">
+        @if (specials != null)
+        {
+            @foreach (var special in specials)
+            {
+                <li style="background: url(@special.ImageUrl)">
+                    <div class="pizza-info">
+                        <span class="title">@special.Name</span>
+                        <p>@special.Description</p>
+                        <span class="price">@special.GetFormattedBasePrice()</span>
+                    </div>
+                </li>
+            }
+        }
+
+    </ul>
+</div>
 
 @code {
-    private string PizzaGreeting = "Hello, this is the pizza corner for Carlson";
+    public string PizzaGreeting = "Hello, this is the pizza corner for Carlson";
 
-    List<PizzaSpecials> specials = new();
+    private List<PizzaSpecial> specials = new();
 
     protected override void OnInitialized()
     {
-        specials.AddRange(new List<PizzaSpecials>){
-            new PizzaSpecials {PizzaName ="", PizzaBasePrice =, PizzaDescription = "", PizzaImageUrl = ""}
-        }
+        specials.AddRange(new List<PizzaSpecial>
+            {
+                new PizzaSpecial { Name = "Pizza1", BasePrice = 1.00M, Description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque ac ultrices risus, eu faucibus dolor.", ImageUrl = "img/pizzas/bacon.jpg" },
+                new PizzaSpecial { Name = "Pizza2", BasePrice = 2.00M, Description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque ac ultrices risus, eu faucibus dolor.", ImageUrl = "img/pizzas/cheese.jpg" },
+                new PizzaSpecial { Name = "Pizza3", BasePrice = 3.00M, Description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque ac ultrices risus, eu faucibus dolor.", ImageUrl = "img/pizzas/margherita.jpg" },
+                new PizzaSpecial { Name = "Pizza4", BasePrice = 4.00M, Description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque ac ultrices risus, eu faucibus dolor.", ImageUrl = "img/pizzas/meaty.jpg" },
+                new PizzaSpecial { Name = "Pizza5", BasePrice = 5.00M, Description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque ac ultrices risus, eu faucibus dolor.", ImageUrl = "img/pizzas/mushroom.jpg" }
+            }); 
     }
 }
