@@ -21,6 +21,32 @@
 
     </ul>
 </div>
+<br />
+<div>
+    <h3>Tabular form for Pizzas</h3>
+    <table>
+        <thead>
+            <tr>
+                <th><h3>Pizza</h3></th>
+                <th><h3>Pizza Info</h3></th>
+                <th><h3>Pizza Price</h3></th>
+            </tr>
+        </thead>
+        <tbody>
+            @if (specials != null){
+            @foreach (var special in specials)
+            {
+                <tr>
+                    <td>@special.Name</td>
+                    <td>@special.Description</td>
+                    <td>@special.GetFormattedBasePrice()</td>
+                </tr>
+            }
+            }
+
+        </tbody>
+    </table>
+</div>
 
 @code {
     public string PizzaGreeting = "Hello, this is the pizza corner for Carlson";
