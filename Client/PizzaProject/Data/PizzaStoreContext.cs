@@ -1,7 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 
 
-namespace BlazorBasic.Data
+namespace BlazorBasic.PizzaProject.Data
 {
     public class PizzaStoreContext : DbContext
     {

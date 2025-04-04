@@ -1,6 +1,6 @@
 ﻿using System.Xml.Linq;
 
-namespace BlazorBasic.Data
+namespace BlazorBasic.PizzaProject.Data
 {
     public static class SeedData
     {
