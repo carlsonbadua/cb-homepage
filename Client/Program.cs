@@ -1,12 +1,10 @@
 using Microsoft.AspNetCore.Components.Web;
 using Microsoft.AspNetCore.Components.WebAssembly.Hosting;
-using Microsoft.AspNetCore.Mvc;
 
 using BlazorBasic;
 using BlazorBasic.PizzaProject.Data;
 
 var builder = WebAssemblyHostBuilder.CreateDefault(args);
-builder.Services.AddControllers();
 
 
 builder.RootComponents.Add<App>("#app");
@@ -16,7 +14,6 @@ builder.Services.AddScoped(sp => new HttpClient { BaseAddress = new Uri(builder.
 
 var app = builder.Build();
 
-app.MapControllers();
 
 await builder.Build().RunAsync();
 
