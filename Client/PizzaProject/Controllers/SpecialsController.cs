@@ -6,7 +6,7 @@ namespace BlazorBasic.PizzaProject.Controllers;
 
 [Route("specials")]
 [ApiController]
-public class SpecialsController : ControllerBase
+public class SpecialsController:ControllerBase
 {
     private readonly PizzaStoreContext _db;
 
